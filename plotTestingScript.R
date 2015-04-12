@@ -19,26 +19,13 @@ hpcPlotData <- transform(hpcPlotData, timestamp=as.POSIXct(paste(Date, Time)), "
 
 ####Copy and paste the plot script you wish to check without having to source and download the data each time
 
-##Create Plot 4 with four charts displayed at once
-
-par(mfrow=c(2,2))
-
-# Plot 1
-plot(hpcPlotData$timestamp, hpcPlotData$Global_active_power, type="l", xlab="", ylab="Global Active Power")
-
-# Plot 2
-plot(hpcPlotData$timestamp, hpcPlotData$Voltage, type="l", xlab="datetime", ylab="Voltage")
-
-# Plot 3
+#Create Plot 3 Line Graph with 3 variables
 plot(hpcPlotData$timestamp, hpcPlotData$Sub_metering_1, type="l", xlab="", ylab="Energy sub metering")
 lines(hpcPlotData$timestamp, hpcPlotData$Sub_metering_2, col="red")
 lines(hpcPlotData$timestamp, hpcPlotData$Sub_metering_3, col="blue")
-legend("topright", col=c("black", "red", "blue"), c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1, 1), bty="n", cex=.5)
-
-# Plot 4
-plot(hpcPlotData$timestamp,hpcPlotData$Global_reactive_power, type="l", xlab="datetime", ylab="Global_reactive_power")
+legend("topright", col=c("black", "red", "blue"), c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), border = "black", lty=c(1, 1), bty="o", cex=.5)
 
 # Create image file
-dev.copy(png, file="./ExData_Plotting1/plot4.png", width=480, height=480)
+dev.copy(png, file="./ExData_Plotting1/plot3.png", width=480, height=480)
 dev.off()
 

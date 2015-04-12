@@ -29,7 +29,7 @@ hpcPlotData <- transform(hpcPlotData, timestamp=as.POSIXct(paste(Date, Time)), "
 plot(hpcPlotData$timestamp, hpcPlotData$Sub_metering_1, type="l", xlab="", ylab="Energy sub metering")
 lines(hpcPlotData$timestamp, hpcPlotData$Sub_metering_2, col="red")
 lines(hpcPlotData$timestamp, hpcPlotData$Sub_metering_3, col="blue")
-legend("topright", col=c("black", "red", "blue"), c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1, 1), bty="n", cex=.5)
+legend("topright", col=c("black", "red", "blue"), c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), border = "black", lty=c(1, 1), bty="o", cex=.5)
 
 # Create image file
 dev.copy(png, file="./ExData_Plotting1/plot3.png", width=480, height=480)
